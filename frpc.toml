@@ -7,8 +7,15 @@ webServer.user = "admin"
 webServer.password = "admin"
 
 [[proxies]]
-name = "hello"
+name = "mysql"
 type = "tcp"
 localIP = "127.0.0.1"
-localPort = 2000 #本地服务端口
-remotePort = 7001 #远程服务器端口, 成功部署之后, 可以通过公网ip:7001访问内网的2000端口
+localPort = 3306 #本地服务端口
+remotePort = 13306 #远程服务器端口, 成功部署之后, 可以通过公网ip:7001访问内网的2000端口
+
+[[proxies]]
+name = "ssh"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 22 #本地服务端口
+remotePort = 10022 #远程服务器端口, 成功部署之后, 可以通过公网ip:7001访问内网的2000端口
